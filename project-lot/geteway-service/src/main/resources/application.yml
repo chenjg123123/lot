@@ -1,0 +1,21 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    nacos:
+      discovery:
+        ip: 127.0.0.1  # 手动指定注册 IP
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true   # 启用通过服务名转发（如 lb://user-service）
+          lower-case-service-id: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/auth/**

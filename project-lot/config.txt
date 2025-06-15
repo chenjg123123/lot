@@ -1,0 +1,12 @@
+# 这个地方的事物分组可以配置多个，多个配置多行
+service.vgroupMapping.my_test_tx_group=default
+service.vgroupMapping.product-service=hangzhou
+service.vgroupMapping.order-service=hangzhou
+# 指定存储模式为db
+store.mode=db
+store.db.datasource=druid
+store.db.dbType=mysql
+store.db.driverClassName=com.mysql.jdbc.Driver
+store.db.url=jdbc:mysql://10.1.168.152:3306/device_service?useUnicode=true&rewriteBatchedStatements=true
+store.db.user=root
+store.db.password=123456

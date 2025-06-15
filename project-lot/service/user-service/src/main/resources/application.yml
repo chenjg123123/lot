@@ -1,0 +1,41 @@
+server:
+  port: 8851
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    dynamic:
+      primary: master
+      datasource:
+          master:
+            url: jdbc:mysql://localhost:3307/user_service?useSSL=false&serverTimezone=Asia/Shanghai
+            username: root
+            password: 123456
+            driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        ip: 127.0.0.1  # 手动指定注册 IP
+      server-addr: http://localhost:8848
+      config:
+        server-addr: http://localhost:8848
+
+nacos:
+  discovery:
+    auto-registration: true
+
+#        company:
+#          url: jdbc:mysql://localhost:3306/company_db
+#          username: root
+#          password: root
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+
+seata:
+  enabled: true
+  application-id: user-service
+  # 是否自动开启数据源代理
+  enable-auto-data-source-proxy: false
+rsa:
+  public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqhRMA9JwKm9G0Q/AuGDLVPjjADamOxcQsbBtoQzqK+CPMswG8CeChMJRh2xYYcpozat7PLXUoeQQJ3uaMi5Hi97VrobteC3ur6Wl4Z7xyY++p8sE0o9RvPttnaM+LsrsyCPDJyI4TpdmmnW+jbef5Opqa5d+XWrfeQZnPA/M88QIDAQAB
+  private-key: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKqFEwD0nAqb0bRD8C4YMtU+OMANqY7FxCxsG2hDOor4I8yzAbwJ4KEwlGHbFhhymjNq3s8tdSh5BAne5oyLkeL3tWuhu14Le6vpaXhnvHJj76nywTSj1G8+22doz4uyuzII8MnIjhOl2aadb6Nt5/k6mprl35dat95Bmc8D8zzxAgMBAAECgYALhSYKU694szVw4+e44kwJrN4RcfRy/6Vub6qCWfH9XyCvPNpXJXIWZPCa+j3J6D3GteelQFrz7jxGaaRSk0Ag/dWzjKVk6gyLaYbqBA1vUDnbCa1MIvGxi27UMdqPzG4vQMt1ND1+LO/DtKZElkLhKUVE6zxqB2/x+aItlPc2CQJBAPs7pSEZCnj2WCC0Y45pc8ogfT8omjke5IPa25aHCfbX9S6Q3BN7MgKrIk47ZY6saPbe+MajWlei+mrheokRCJcCQQCtwV4zJezTQ2X7OO989gMDwkQEo59r6+7atjBtftSirfJfIfJN1n6CtsVd3lft7SvKFGjOPAyvD3FVwFq6TM+3AkEA8Tw/fj1+OdJJovWzlt6ZCWATA59oHysTv6xaJ/r4zWZmjlUYjThBOCC9ayNLjCjvDQXjGVFngTkEfbaOo6iQdwJAEjTHvQ5FQWG3htpRZcOVT0iEvgOzCajgDzS14FNAzobxdXxmGjfWa7Xg+lP43KpUQ0leLfXm0lUI6BZOq2SvAwJBAJ01Jhb8QTO58yuMvJ1G8vJkcy1dw8uaBgdj+XYrs42Ku2l/187V0nJukxYM7/W2dTSVdPvpAVLwP8sA7FX2Yy8=
