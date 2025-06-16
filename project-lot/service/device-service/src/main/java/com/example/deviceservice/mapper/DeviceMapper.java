@@ -1,9 +1,9 @@
 package com.example.deviceservice.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.model.device.Device;
+import com.example.model.devices.Devices;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface DeviceMapper extends BaseMapper<Device> {
+public interface DeviceMapper extends BaseMapper<Devices> {
 } 

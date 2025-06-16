@@ -19,3 +19,8 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/auth/**
+        - id: device-service
+          uri: lb://device-service
+          predicates:
+            - Path=/device/**
+

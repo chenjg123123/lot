@@ -13,25 +13,24 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    private static final String secret= "mySuperSecretKey123456789012345678901234 "; // 从配置文件读取密钥
+    // 秘钥（必须长度足够，否则会报错）
+    private static final String SECRET = "mySuperSecretKey123456789012345678901234";
+    private static final long EXPIRATION = 24 * 60 * 60 * 1000L; // 1 天
 
     private SecretKey secretKey;
 
-    private static final long EXPIRATION = 24 * 60 * 60 * 1000L; // 1 天
-
     @PostConstruct
     public void init() {
-        // 初始化密钥，避免每次都创建
-        this.secretKey = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+        this.secretKey = Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
     }
 
     /**
-     * 生成 JWT token
+     * 生成 Token
      */
     public String generateToken(Users user) {
         return Jwts.builder()
                 .setSubject(user.getUsername())
-                .claim("role", user.getRole())
+                .claim("role", user.getRole()) // admin / user / maintain
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
                 .signWith(secretKey, SignatureAlgorithm.HS256)
@@ -39,40 +38,64 @@ public class JwtUtil {
     }
 
     /**
-     * 从 token 中解析用户名
+     * 校验 Token 是否有效
+     */
+    public boolean validateToken(String token) {
+        try {
+            getClaims(token); // 只要能解析就是合法
+            return true;
+        } catch (JwtException | IllegalArgumentException e) {
+            return false;
+        }
+    }
+
+    /**
+     * 获取用户名（Subject）
      */
     public String getUsernameFromToken(String token) {
         return getClaims(token).getSubject();
     }
 
     /**
-     * 获取角色信息（可选）
+     * 获取角色
      */
     public String getRoleFromToken(String token) {
         return (String) getClaims(token).get("role");
     }
 
     /**
-     * 校验 token 是否有效
+     * 判断是否是某个角色（admin / user / maintain）
      */
-    public boolean validateToken(String token) {
-        try {
-            getClaims(token);
-            return true;
-        } catch (ExpiredJwtException e) {
-            System.out.println("Token 已过期");
-        } catch (UnsupportedJwtException | MalformedJwtException | SignatureException e) {
-            System.out.println("Token 非法");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Token 为空");
-        }
-        return false;
+    public boolean hasRole(String token, String role) {
+        String userRole = getRoleFromToken(token);
+        return userRole != null && userRole.equalsIgnoreCase(role);
     }
 
     /**
-     * 解析 Claims
+     * 是否是管理员
      */
-    private Claims getClaims(String token) {
+    public boolean isAdmin(String token) {
+        return hasRole(token, "admin");
+    }
+
+    /**
+     * 是否是普通用户
+     */
+    public boolean isUser(String token) {
+        return hasRole(token, "user");
+    }
+
+    /**
+     * 是否是运维人员
+     */
+    public boolean isMaintain(String token) {
+        return hasRole(token, "maintain");
+    }
+
+    /**
+     * 获取所有 Claims 信息
+     */
+    public Claims getClaims(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(secretKey)
                 .build()

@@ -1,6 +1,9 @@
 package com.example.model.common;
 
+import com.example.model.devices.Devices;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * 通用返回对象

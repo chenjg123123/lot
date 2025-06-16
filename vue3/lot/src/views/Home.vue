@@ -112,11 +112,16 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import * as echarts from 'echarts'
-
+import { getDeviceList } from '@/api/deviceApi'
+import type { ResponseDTO } from '@/common/responseDTO'
 const ticketChartRef = ref<HTMLElement>()
 const deviceChartRef = ref<HTMLElement>()
+const deviceList = ref()
 
-onMounted(() => {
+onMounted(async () => {
+  deviceList.value = await getDeviceList().then((res) => {
+    return (res as ResponseDTO).data.data
+  })
   // 初始化工单趋势图表
   const ticketChart = echarts.init(ticketChartRef.value!)
   ticketChart.setOption({
