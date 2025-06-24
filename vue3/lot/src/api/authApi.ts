@@ -5,7 +5,7 @@ interface LoginParams {
   username: string
   password: string
 }
-
+//登录
 export const login = (params: LoginParams) => {
   // 对密码进行RSA加密
   const encryptedPassword = rsaUtil.encryptData(params.password)

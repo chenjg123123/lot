@@ -1,4 +1,4 @@
-package com.example.gateway.filter;
+package com.example.getway.filter;
 
 import com.example.service.util.JwtUtil;
 import io.jsonwebtoken.Claims;
@@ -17,6 +17,7 @@ import reactor.core.publisher.Mono;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+
 @Component
 public class AuthFilter implements GlobalFilter, Ordered {
 
@@ -25,7 +26,8 @@ public class AuthFilter implements GlobalFilter, Ordered {
     );
 
     @Autowired
-    private JwtUtil jwtUtil;
+    private  JwtUtil jwtUtil;
+
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

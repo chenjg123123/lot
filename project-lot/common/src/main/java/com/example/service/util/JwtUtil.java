@@ -3,6 +3,8 @@ package com.example.service.util;
 import com.example.model.user.Users;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -15,7 +17,8 @@ public class JwtUtil {
 
     // 秘钥（必须长度足够，否则会报错）
     private static final String SECRET = "mySuperSecretKey123456789012345678901234";
-    private static final long EXPIRATION = 24 * 60 * 60 * 1000L; // 1 天
+    private static final long EXPIRATION = 1000 * 60 * 60 * 72L  ; // 1 天
+    private static final Logger log = LoggerFactory.getLogger(JwtUtil.class);
 
     private SecretKey secretKey;
 
@@ -42,12 +45,23 @@ public class JwtUtil {
      */
     public boolean validateToken(String token) {
         try {
-            getClaims(token); // 只要能解析就是合法
-            return true;
+            Claims claims = getClaims(token);
+            Date expiration = claims.getExpiration();
+            if (expiration == null) {
+                // 没有过期时间，视为非法 token 或根据需求判断
+                System.out.println("校验失败1");
+                return false;
+            }
+            // 判断 token 是否已过期
+            System.out.println("校验失败2");
+            return expiration.after(new Date());
         } catch (JwtException | IllegalArgumentException e) {
+            log.info("Token 校验失败：{}", e.getMessage());
+            System.out.println("校验失败");
             return false;
         }
     }
+
 
     /**
      * 获取用户名（Subject）

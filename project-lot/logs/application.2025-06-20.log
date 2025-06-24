@@ -1,0 +1,459 @@
+2025-06-20 12:03:20 [main] INFO  c.a.n.c.env.SearchableProperties - properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-06-20 12:03:20 [main] INFO  c.e.u.UserServiceApplication - Starting UserServiceApplication using Java 17.0.15 on LAPTOP-59D9UJ73 with PID 93312 (D:\Project\Html\react1\lot\project-lot\service\user-service\target\classes started by user in D:\Project\Html\react1\lot\project-lot)
+2025-06-20 12:03:20 [main] INFO  c.e.u.UserServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 12:03:21 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=34d071df-187c-3dbf-aadf-ae500d0d7a0c
+2025-06-20 12:03:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springApplicationContextProvider' of type [io.seata.spring.boot.autoconfigure.provider.SpringApplicationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'failureHandler' of type [io.seata.tm.api.DefaultFailureHandlerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:21 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$492/0x0000023c393896d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springCloudAlibabaConfiguration' of type [io.seata.spring.boot.autoconfigure.properties.SpringCloudAlibabaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'seataProperties' of type [io.seata.spring.boot.autoconfigure.properties.SeataProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:22 [main] INFO  i.s.s.b.a.SeataAutoConfiguration - Automatically configure Seata
+2025-06-20 12:03:22 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:03:22 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:03:22 [main] INFO  i.s.s.a.GlobalTransactionScanner - Initializing Global Transaction Clients ... 
+2025-06-20 12:03:22 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:03:22 [main] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:03:23 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:TMROLE,address:127.0.0.1:8091,msg:< RegisterTMRequest{applicationId='user-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:03:23 [NettyClientSelector_TMROLE_1_1] WARN  i.s.c.l.EnhancedServiceLoader$InnerEnhancedServiceLoader - Load [io.seata.serializer.hessian.HessianSerializer] class fail. com/caucho/hessian/io/AbstractHessianOutput
+2025-06-20 12:03:23 [main] INFO  i.s.c.r.netty.TmNettyRemotingClient - register TM success. client version:1.6.1, server version:1.6.1,channel:[id: 0x61b1d203, L:/127.0.0.1:32857 - R:/127.0.0.1:8091]
+2025-06-20 12:03:23 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 95 ms, version:1.6.1,role:TMROLE,channel:[id: 0x61b1d203, L:/127.0.0.1:32857 - R:/127.0.0.1:8091]
+2025-06-20 12:03:23 [main] INFO  i.s.s.a.GlobalTransactionScanner - Transaction Manager Client is initialized. applicationId[user-service] txServiceGroup[default_tx_group]
+2025-06-20 12:03:23 [main] INFO  io.seata.rm.datasource.AsyncWorker - Async Commit Buffer Limit: 10000
+2025-06-20 12:03:23 [main] INFO  i.s.r.d.xa.ResourceManagerXA - ResourceManagerXA init ...
+2025-06-20 12:03:23 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:03:23 [main] INFO  i.s.s.a.GlobalTransactionScanner - Resource Manager is initialized. applicationId[user-service] txServiceGroup[default_tx_group]
+2025-06-20 12:03:23 [main] INFO  i.s.s.a.GlobalTransactionScanner - Global Transaction Clients are initialized. 
+2025-06-20 12:03:23 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:23 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$dda8bb7e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:23 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8852 (http)
+2025-06-20 12:03:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8852"]
+2025-06-20 12:03:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-20 12:03:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-06-20 12:03:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-20 12:03:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3032 ms
+2025-06-20 12:03:24 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2025-06-20 12:03:24 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2025-06-20 12:03:24 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2025-06-20 12:03:26 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8852"]
+2025-06-20 12:03:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8852 (http) with context path ''
+2025-06-20 12:03:26 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-06-20 12:03:26 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-06-20 12:03:28 [main] INFO  c.a.c.n.r.NacosServiceRegistry - nacos registry, DEFAULT_GROUP user-service 127.0.0.1:8852 register finished
+2025-06-20 12:03:29 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:29 [main] INFO  c.e.u.UserServiceApplication - Started UserServiceApplication in 11.112 seconds (JVM running for 12.341)
+2025-06-20 12:03:37 [main] INFO  c.a.n.c.env.SearchableProperties - properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-06-20 12:03:37 [main] INFO  c.e.u.UserServiceApplication - Starting UserServiceApplication using Java 17.0.15 on LAPTOP-59D9UJ73 with PID 116844 (D:\Project\Html\react1\lot\project-lot\service\user-service\target\classes started by user in D:\Project\Html\react1\lot\project-lot)
+2025-06-20 12:03:37 [main] INFO  c.e.u.UserServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 12:03:38 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=34d071df-187c-3dbf-aadf-ae500d0d7a0c
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springApplicationContextProvider' of type [io.seata.spring.boot.autoconfigure.provider.SpringApplicationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'failureHandler' of type [io.seata.tm.api.DefaultFailureHandlerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$504/0x00000209013b1b68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springCloudAlibabaConfiguration' of type [io.seata.spring.boot.autoconfigure.properties.SpringCloudAlibabaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'seataProperties' of type [io.seata.spring.boot.autoconfigure.properties.SeataProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:38 [main] INFO  i.s.s.b.a.SeataAutoConfiguration - Automatically configure Seata
+2025-06-20 12:03:38 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:03:38 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:03:38 [main] INFO  i.s.s.a.GlobalTransactionScanner - Initializing Global Transaction Clients ... 
+2025-06-20 12:03:39 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:03:39 [main] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:03:39 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:TMROLE,address:127.0.0.1:8091,msg:< RegisterTMRequest{applicationId='user-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:03:39 [NettyClientSelector_TMROLE_1_1] WARN  i.s.c.l.EnhancedServiceLoader$InnerEnhancedServiceLoader - Load [io.seata.serializer.hessian.HessianSerializer] class fail. com/caucho/hessian/io/AbstractHessianOutput
+2025-06-20 12:03:39 [main] INFO  i.s.c.r.netty.TmNettyRemotingClient - register TM success. client version:1.6.1, server version:1.6.1,channel:[id: 0xec7bed09, L:/127.0.0.1:32940 - R:/127.0.0.1:8091]
+2025-06-20 12:03:39 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 70 ms, version:1.6.1,role:TMROLE,channel:[id: 0xec7bed09, L:/127.0.0.1:32940 - R:/127.0.0.1:8091]
+2025-06-20 12:03:39 [main] INFO  i.s.s.a.GlobalTransactionScanner - Transaction Manager Client is initialized. applicationId[user-service] txServiceGroup[default_tx_group]
+2025-06-20 12:03:39 [main] INFO  io.seata.rm.datasource.AsyncWorker - Async Commit Buffer Limit: 10000
+2025-06-20 12:03:39 [main] INFO  i.s.r.d.xa.ResourceManagerXA - ResourceManagerXA init ...
+2025-06-20 12:03:39 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:03:39 [main] INFO  i.s.s.a.GlobalTransactionScanner - Resource Manager is initialized. applicationId[user-service] txServiceGroup[default_tx_group]
+2025-06-20 12:03:39 [main] INFO  i.s.s.a.GlobalTransactionScanner - Global Transaction Clients are initialized. 
+2025-06-20 12:03:39 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:39 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$749f38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:39 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8851 (http)
+2025-06-20 12:03:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8851"]
+2025-06-20 12:03:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-20 12:03:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-06-20 12:03:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-20 12:03:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2949 ms
+2025-06-20 12:03:40 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2025-06-20 12:03:40 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2025-06-20 12:03:40 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2025-06-20 12:03:43 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:43 [main] INFO  c.a.n.c.env.SearchableProperties - properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-06-20 12:03:43 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8851"]
+2025-06-20 12:03:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8851 (http) with context path ''
+2025-06-20 12:03:43 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-06-20 12:03:43 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-06-20 12:03:43 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-06-20 12:03:43 [main] INFO  c.example.getway.GatewayApplication - Starting GatewayApplication using Java 17.0.15 on LAPTOP-59D9UJ73 with PID 113836 (D:\Project\Html\react1\lot\project-lot\geteway-service\target\classes started by user in D:\Project\Html\react1\lot\project-lot)
+2025-06-20 12:03:43 [main] INFO  c.example.getway.GatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 12:03:44 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=0bfbcd11-ca6f-301e-8687-6403ad5c1dfd
+2025-06-20 12:03:44 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:44 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:44 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:45 [main] INFO  c.a.c.n.r.NacosServiceRegistry - nacos registry, DEFAULT_GROUP user-service 127.0.0.1:8851 register finished
+2025-06-20 12:03:46 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:47 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:47 [main] INFO  c.e.u.UserServiceApplication - Started UserServiceApplication in 11.714 seconds (JVM running for 12.859)
+2025-06-20 12:03:48 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-06-20 12:03:48 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-06-20 12:03:48 [main] INFO  c.a.n.c.env.SearchableProperties - properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-06-20 12:03:48 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-20 12:03:48 [main] INFO  c.e.d.DeviceServiceApplication - Starting DeviceServiceApplication using Java 17.0.15 on LAPTOP-59D9UJ73 with PID 120660 (D:\Project\Html\react1\lot\project-lot\service\device-service\target\classes started by user in D:\Project\Html\react1\lot\project-lot)
+2025-06-20 12:03:48 [main] INFO  c.e.d.DeviceServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 12:03:49 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 9001
+2025-06-20 12:03:50 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=b95f667f-1b6f-3cda-9a22-9dac26e2b789
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springApplicationContextProvider' of type [io.seata.spring.boot.autoconfigure.provider.SpringApplicationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'failureHandler' of type [io.seata.tm.api.DefaultFailureHandlerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$504/0x0000025890391b68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springCloudAlibabaConfiguration' of type [io.seata.spring.boot.autoconfigure.properties.SpringCloudAlibabaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'seataProperties' of type [io.seata.spring.boot.autoconfigure.properties.SeataProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:50 [main] INFO  i.s.s.b.a.SeataAutoConfiguration - Automatically configure Seata
+2025-06-20 12:03:50 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:03:50 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:03:51 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:51 [main] INFO  i.s.s.a.GlobalTransactionScanner - Initializing Global Transaction Clients ... 
+2025-06-20 12:03:51 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:03:51 [main] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:03:51 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:TMROLE,address:127.0.0.1:8091,msg:< RegisterTMRequest{applicationId='device-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:03:51 [NettyClientSelector_TMROLE_1_1] WARN  i.s.c.l.EnhancedServiceLoader$InnerEnhancedServiceLoader - Load [io.seata.serializer.hessian.HessianSerializer] class fail. com/caucho/hessian/io/AbstractHessianOutput
+2025-06-20 12:03:51 [main] INFO  i.s.c.r.netty.TmNettyRemotingClient - register TM success. client version:1.6.1, server version:1.6.1,channel:[id: 0xbbd90819, L:/127.0.0.1:32977 - R:/127.0.0.1:8091]
+2025-06-20 12:03:51 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 67 ms, version:1.6.1,role:TMROLE,channel:[id: 0xbbd90819, L:/127.0.0.1:32977 - R:/127.0.0.1:8091]
+2025-06-20 12:03:51 [main] INFO  i.s.s.a.GlobalTransactionScanner - Transaction Manager Client is initialized. applicationId[device-service] txServiceGroup[default_tx_group]
+2025-06-20 12:03:51 [main] INFO  io.seata.rm.datasource.AsyncWorker - Async Commit Buffer Limit: 10000
+2025-06-20 12:03:51 [main] INFO  i.s.r.d.xa.ResourceManagerXA - ResourceManagerXA init ...
+2025-06-20 12:03:51 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:03:51 [main] INFO  i.s.s.a.GlobalTransactionScanner - Resource Manager is initialized. applicationId[device-service] txServiceGroup[default_tx_group]
+2025-06-20 12:03:51 [main] INFO  i.s.s.a.GlobalTransactionScanner - Global Transaction Clients are initialized. 
+2025-06-20 12:03:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$b3ce4213] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:52 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8861 (http)
+2025-06-20 12:03:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8861"]
+2025-06-20 12:03:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-20 12:03:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-06-20 12:03:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-20 12:03:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3570 ms
+2025-06-20 12:03:52 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2025-06-20 12:03:52 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2025-06-20 12:03:52 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2025-06-20 12:03:52 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:52 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-06-20 12:03:52 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-06-20 12:03:53 [main] INFO  c.a.n.c.env.SearchableProperties - properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-06-20 12:03:53 [main] INFO  c.e.n.NotificationServiceApplication - Starting NotificationServiceApplication using Java 17.0.15 on LAPTOP-59D9UJ73 with PID 126968 (D:\Project\Html\react1\lot\project-lot\service\notification-service\target\classes started by user in D:\Project\Html\react1\lot\project-lot)
+2025-06-20 12:03:53 [main] INFO  c.e.n.NotificationServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 12:03:54 [main] INFO  c.a.c.n.r.NacosServiceRegistry - nacos registry, DEFAULT_GROUP gateway-service 127.0.0.1:9001 register finished
+2025-06-20 12:03:54 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=baa944f8-a492-30f1-8aa8-df7e3cc39451
+2025-06-20 12:03:54 [main] INFO  c.a.c.n.d.GatewayLocatorHeartBeatPublisher - Start nacos gateway locator heartBeat task scheduler.
+2025-06-20 12:03:54 [main] INFO  c.example.getway.GatewayApplication - Started GatewayApplication in 13.394 seconds (JVM running for 14.54)
+2025-06-20 12:03:54 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:54 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springApplicationContextProvider' of type [io.seata.spring.boot.autoconfigure.provider.SpringApplicationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:54 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:55 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'failureHandler' of type [io.seata.tm.api.DefaultFailureHandlerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:55 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:55 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:55 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$504/0x000001f3393b1228] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:55 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:55 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springCloudAlibabaConfiguration' of type [io.seata.spring.boot.autoconfigure.properties.SpringCloudAlibabaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:55 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'seataProperties' of type [io.seata.spring.boot.autoconfigure.properties.SeataProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:55 [main] INFO  i.s.s.b.a.SeataAutoConfiguration - Automatically configure Seata
+2025-06-20 12:03:55 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:03:55 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:03:55 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:55 [main] INFO  i.s.s.a.GlobalTransactionScanner - Initializing Global Transaction Clients ... 
+2025-06-20 12:03:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8861"]
+2025-06-20 12:03:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8861 (http) with context path ''
+2025-06-20 12:03:55 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:03:55 [main] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:03:55 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-06-20 12:03:55 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-06-20 12:03:55 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:TMROLE,address:127.0.0.1:8091,msg:< RegisterTMRequest{applicationId='notification-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:03:56 [NettyClientSelector_TMROLE_1_1] WARN  i.s.c.l.EnhancedServiceLoader$InnerEnhancedServiceLoader - Load [io.seata.serializer.hessian.HessianSerializer] class fail. com/caucho/hessian/io/AbstractHessianOutput
+2025-06-20 12:03:56 [main] INFO  i.s.c.r.netty.TmNettyRemotingClient - register TM success. client version:1.6.1, server version:1.6.1,channel:[id: 0x35f60975, L:/127.0.0.1:32989 - R:/127.0.0.1:8091]
+2025-06-20 12:03:56 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 53 ms, version:1.6.1,role:TMROLE,channel:[id: 0x35f60975, L:/127.0.0.1:32989 - R:/127.0.0.1:8091]
+2025-06-20 12:03:56 [main] INFO  i.s.s.a.GlobalTransactionScanner - Transaction Manager Client is initialized. applicationId[notification-service] txServiceGroup[default_tx_group]
+2025-06-20 12:03:56 [main] INFO  io.seata.rm.datasource.AsyncWorker - Async Commit Buffer Limit: 10000
+2025-06-20 12:03:56 [main] INFO  i.s.r.d.xa.ResourceManagerXA - ResourceManagerXA init ...
+2025-06-20 12:03:56 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:03:56 [main] INFO  i.s.s.a.GlobalTransactionScanner - Resource Manager is initialized. applicationId[notification-service] txServiceGroup[default_tx_group]
+2025-06-20 12:03:56 [main] INFO  i.s.s.a.GlobalTransactionScanner - Global Transaction Clients are initialized. 
+2025-06-20 12:03:56 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:56 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$8cbd0b47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:56 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:03:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8881 (http)
+2025-06-20 12:03:56 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8881"]
+2025-06-20 12:03:56 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-20 12:03:56 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-06-20 12:03:57 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-20 12:03:57 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3490 ms
+2025-06-20 12:03:57 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2025-06-20 12:03:57 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2025-06-20 12:03:57 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2025-06-20 12:03:57 [main] INFO  c.a.c.n.r.NacosServiceRegistry - nacos registry, DEFAULT_GROUP device-service 127.0.0.1:8861 register finished
+2025-06-20 12:03:59 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:03:59 [main] INFO  c.e.d.DeviceServiceApplication - Started DeviceServiceApplication in 12.673 seconds (JVM running for 13.686)
+2025-06-20 12:04:00 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:04:00 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8881"]
+2025-06-20 12:04:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8881 (http) with context path ''
+2025-06-20 12:04:00 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-06-20 12:04:00 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-06-20 12:04:01 [main] INFO  c.a.n.c.env.SearchableProperties - properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-06-20 12:04:01 [main] INFO  c.e.t.TicketServiceApplication - Starting TicketServiceApplication using Java 17.0.15 on LAPTOP-59D9UJ73 with PID 125320 (D:\Project\Html\react1\lot\project-lot\service\ticket-service\target\classes started by user in D:\Project\Html\react1\lot\project-lot)
+2025-06-20 12:04:01 [main] INFO  c.e.t.TicketServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 12:04:01 [main] INFO  c.a.c.n.r.NacosServiceRegistry - nacos registry, DEFAULT_GROUP notification-service 127.0.0.1:8881 register finished
+2025-06-20 12:04:02 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=2027edf0-86a3-3bcf-86a0-d3dc8268aaa7
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springApplicationContextProvider' of type [io.seata.spring.boot.autoconfigure.provider.SpringApplicationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'io.seata.spring.boot.autoconfigure.SeataAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'failureHandler' of type [io.seata.tm.api.DefaultFailureHandlerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$504/0x00000203893b1468] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'springCloudAlibabaConfiguration' of type [io.seata.spring.boot.autoconfigure.properties.SpringCloudAlibabaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'seataProperties' of type [io.seata.spring.boot.autoconfigure.properties.SeataProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:02 [main] INFO  i.s.s.b.a.SeataAutoConfiguration - Automatically configure Seata
+2025-06-20 12:04:02 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:04:02 [main] INFO  io.seata.config.ConfigurationFactory - load Configuration from :Spring Configuration
+2025-06-20 12:04:02 [main] INFO  i.s.s.a.GlobalTransactionScanner - Initializing Global Transaction Clients ... 
+2025-06-20 12:04:02 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:04:02 [main] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:04:02 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:TMROLE,address:127.0.0.1:8091,msg:< RegisterTMRequest{applicationId='ticket-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:04:03 [NettyClientSelector_TMROLE_1_1] WARN  i.s.c.l.EnhancedServiceLoader$InnerEnhancedServiceLoader - Load [io.seata.serializer.hessian.HessianSerializer] class fail. com/caucho/hessian/io/AbstractHessianOutput
+2025-06-20 12:04:03 [main] INFO  i.s.c.r.netty.TmNettyRemotingClient - register TM success. client version:1.6.1, server version:1.6.1,channel:[id: 0x6876de76, L:/127.0.0.1:33017 - R:/127.0.0.1:8091]
+2025-06-20 12:04:03 [main] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 54 ms, version:1.6.1,role:TMROLE,channel:[id: 0x6876de76, L:/127.0.0.1:33017 - R:/127.0.0.1:8091]
+2025-06-20 12:04:03 [main] INFO  i.s.s.a.GlobalTransactionScanner - Transaction Manager Client is initialized. applicationId[ticket-service] txServiceGroup[default_tx_group]
+2025-06-20 12:04:03 [main] INFO  io.seata.rm.datasource.AsyncWorker - Async Commit Buffer Limit: 10000
+2025-06-20 12:04:03 [main] INFO  i.s.r.d.xa.ResourceManagerXA - ResourceManagerXA init ...
+2025-06-20 12:04:03 [main] INFO  i.s.c.rpc.netty.NettyClientBootstrap - NettyClientBootstrap has started
+2025-06-20 12:04:03 [main] INFO  i.s.s.a.GlobalTransactionScanner - Resource Manager is initialized. applicationId[ticket-service] txServiceGroup[default_tx_group]
+2025-06-20 12:04:03 [main] INFO  i.s.s.a.GlobalTransactionScanner - Global Transaction Clients are initialized. 
+2025-06-20 12:04:03 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:03 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$78a95591] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:03 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:04:03 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:04:03 [main] INFO  c.e.n.NotificationServiceApplication - Started NotificationServiceApplication in 12.158 seconds (JVM running for 13.437)
+2025-06-20 12:04:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8871 (http)
+2025-06-20 12:04:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8871"]
+2025-06-20 12:04:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-20 12:04:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2025-06-20 12:04:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-20 12:04:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2523 ms
+2025-06-20 12:04:03 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2025-06-20 12:04:03 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2025-06-20 12:04:03 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2025-06-20 12:04:06 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:04:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8871"]
+2025-06-20 12:04:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8871 (http) with context path ''
+2025-06-20 12:04:06 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-06-20 12:04:06 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-06-20 12:04:07 [main] INFO  c.a.c.n.r.NacosServiceRegistry - nacos registry, DEFAULT_GROUP ticket-service 127.0.0.1:8871 register finished
+2025-06-20 12:04:09 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:04:09 [main] INFO  c.e.t.TicketServiceApplication - Started TicketServiceApplication in 10.148 seconds (JVM running for 11.129)
+2025-06-20 12:04:23 [timeoutChecker_2_1] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:04:23 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:RMROLE,address:127.0.0.1:8091,msg:< RegisterRMRequest{resourceIds='null', applicationId='user-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:04:23 [timeoutChecker_2_1] INFO  i.s.c.r.netty.RmNettyRemotingClient - register RM success. client version:1.6.1, server version:1.6.1,channel:[id: 0xe986d27f, L:/127.0.0.1:33039 - R:/127.0.0.1:8091]
+2025-06-20 12:04:23 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 8 ms, version:1.6.1,role:RMROLE,channel:[id: 0xe986d27f, L:/127.0.0.1:33039 - R:/127.0.0.1:8091]
+2025-06-20 12:04:39 [timeoutChecker_2_1] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:04:39 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:RMROLE,address:127.0.0.1:8091,msg:< RegisterRMRequest{resourceIds='null', applicationId='user-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:04:39 [timeoutChecker_2_1] INFO  i.s.c.r.netty.RmNettyRemotingClient - register RM success. client version:1.6.1, server version:1.6.1,channel:[id: 0xf2e68e2e, L:/127.0.0.1:33081 - R:/127.0.0.1:8091]
+2025-06-20 12:04:39 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 5 ms, version:1.6.1,role:RMROLE,channel:[id: 0xf2e68e2e, L:/127.0.0.1:33081 - R:/127.0.0.1:8091]
+2025-06-20 12:04:51 [timeoutChecker_2_1] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:04:51 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:RMROLE,address:127.0.0.1:8091,msg:< RegisterRMRequest{resourceIds='null', applicationId='device-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:04:51 [timeoutChecker_2_1] INFO  i.s.c.r.netty.RmNettyRemotingClient - register RM success. client version:1.6.1, server version:1.6.1,channel:[id: 0x35086987, L:/127.0.0.1:33094 - R:/127.0.0.1:8091]
+2025-06-20 12:04:51 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 5 ms, version:1.6.1,role:RMROLE,channel:[id: 0x35086987, L:/127.0.0.1:33094 - R:/127.0.0.1:8091]
+2025-06-20 12:04:56 [timeoutChecker_2_1] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:04:56 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:RMROLE,address:127.0.0.1:8091,msg:< RegisterRMRequest{resourceIds='null', applicationId='notification-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:04:56 [timeoutChecker_2_1] INFO  i.s.c.r.netty.RmNettyRemotingClient - register RM success. client version:1.6.1, server version:1.6.1,channel:[id: 0xea3e4caa, L:/127.0.0.1:33100 - R:/127.0.0.1:8091]
+2025-06-20 12:04:56 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 5 ms, version:1.6.1,role:RMROLE,channel:[id: 0xea3e4caa, L:/127.0.0.1:33100 - R:/127.0.0.1:8091]
+2025-06-20 12:05:03 [timeoutChecker_2_1] INFO  i.s.c.r.n.NettyClientChannelManager - will connect to 127.0.0.1:8091
+2025-06-20 12:05:03 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - NettyPool create channel to transactionRole:RMROLE,address:127.0.0.1:8091,msg:< RegisterRMRequest{resourceIds='null', applicationId='ticket-service', transactionServiceGroup='default_tx_group'} >
+2025-06-20 12:05:03 [timeoutChecker_2_1] INFO  i.s.c.r.netty.RmNettyRemotingClient - register RM success. client version:1.6.1, server version:1.6.1,channel:[id: 0x27fb42e1, L:/127.0.0.1:33112 - R:/127.0.0.1:8091]
+2025-06-20 12:05:03 [timeoutChecker_2_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - register success, cost 5 ms, version:1.6.1,role:RMROLE,channel:[id: 0x27fb42e1, L:/127.0.0.1:33112 - R:/127.0.0.1:8091]
+2025-06-20 12:48:29 [http-nio-8851-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-20 12:48:29 [http-nio-8851-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-20 12:48:29 [http-nio-8851-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-20 12:48:38 [http-nio-8852-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-20 12:48:38 [http-nio-8852-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-20 12:48:38 [http-nio-8852-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-20 12:52:56 [boundedElastic-4] ERROR c.a.c.n.d.r.NacosReactiveDiscoveryClient - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:639)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-06-20 12:53:35 [http-nio-8852-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3307/user_service?useSSL=false&serverTimezone=Asia/Shanghai, version : 1.2.5, lastPacketReceivedIdleMillis : 296435
+2025-06-20 12:53:36 [http-nio-8851-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3307/user_service?useSSL=false&serverTimezone=Asia/Shanghai, version : 1.2.5, lastPacketReceivedIdleMillis : 284652
+2025-06-20 12:54:48 [Thread-5] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-06-20 12:54:48 [Thread-8] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-06-20 12:54:48 [Thread-5] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-06-20 12:54:48 [Thread-8] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-06-20 12:54:48 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registering from Nacos Server now...
+2025-06-20 12:54:48 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registration finished.
+2025-06-20 12:54:56 [main] INFO  c.a.n.c.env.SearchableProperties - properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-06-20 12:54:56 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-06-20 12:54:56 [main] INFO  c.example.getway.GatewayApplication - Starting GatewayApplication using Java 17.0.15 on LAPTOP-59D9UJ73 with PID 90612 (D:\Project\Html\react1\lot\project-lot\geteway-service\target\classes started by user in D:\Project\Html\react1\lot\project-lot)
+2025-06-20 12:54:56 [main] INFO  c.example.getway.GatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-20 12:54:57 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=0bfbcd11-ca6f-301e-8687-6403ad5c1dfd
+2025-06-20 12:54:57 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:54:57 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:54:57 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-06-20 12:54:58 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:55:00 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-06-20 12:55:00 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-06-20 12:55:00 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-06-20 12:55:01 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 9001
+2025-06-20 12:55:02 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:55:03 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-06-20 12:55:03 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-06-20 12:55:03 [main] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-06-20 12:55:05 [main] INFO  c.a.c.n.r.NacosServiceRegistry - nacos registry, DEFAULT_GROUP gateway-service 127.0.0.1:9001 register finished
+2025-06-20 12:55:05 [main] INFO  c.a.c.n.d.GatewayLocatorHeartBeatPublisher - Start nacos gateway locator heartBeat task scheduler.
+2025-06-20 12:55:05 [main] INFO  c.example.getway.GatewayApplication - Started GatewayApplication in 10.916 seconds (JVM running for 11.702)
+2025-06-20 13:06:51 [boundedElastic-10] WARN  i.n.r.d.DefaultDnsServerAddressStreamProvider - Default DNS servers: [/8.8.8.8:53, /8.8.4.4:53] (Google Public DNS as a fallback)
+2025-06-20 13:06:51 [http-nio-8851-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3307/user_service?useSSL=false&serverTimezone=Asia/Shanghai, version : 1.2.5, lastPacketReceivedIdleMillis : 794144
+2025-06-20 13:08:15 [http-nio-8852-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3307/user_service?useSSL=false&serverTimezone=Asia/Shanghai, version : 1.2.5, lastPacketReceivedIdleMillis : 879336
+2025-06-20 16:54:28 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-06-20 16:54:28 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-06-20 16:54:28 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-06-20 16:54:28 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registering from Nacos Server now...
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registration finished.
+2025-06-20 16:54:29 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-06-20 16:54:29 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-06-20 16:54:29 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-06-20 16:54:29 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - channel inactive: [id: 0x27fb42e1, L:/127.0.0.1:33112 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.NettyClientChannelManager - return to pool, rm channel:[id: 0x27fb42e1, L:/127.0.0.1:33112 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - channel valid false,channel:[id: 0x27fb42e1, L:/127.0.0.1:33112 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - will destroy channel:[id: 0x27fb42e1, L:/127.0.0.1:33112 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x27fb42e1, L:/127.0.0.1:33112 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x27fb42e1, L:/127.0.0.1:33112 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registering from Nacos Server now...
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registration finished.
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - channel inactive: [id: 0x35086987, L:/127.0.0.1:33094 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.NettyClientChannelManager - return to pool, rm channel:[id: 0x35086987, L:/127.0.0.1:33094 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - channel valid false,channel:[id: 0x35086987, L:/127.0.0.1:33094 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - will destroy channel:[id: 0x35086987, L:/127.0.0.1:33094 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x35086987, L:/127.0.0.1:33094 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x35086987, L:/127.0.0.1:33094 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:29 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-06-20 16:54:29 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-06-20 16:54:29 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-06-20 16:54:29 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registering from Nacos Server now...
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registration finished.
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - channel inactive: [id: 0xea3e4caa, L:/127.0.0.1:33100 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.NettyClientChannelManager - return to pool, rm channel:[id: 0xea3e4caa, L:/127.0.0.1:33100 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - channel valid false,channel:[id: 0xea3e4caa, L:/127.0.0.1:33100 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - will destroy channel:[id: 0xea3e4caa, L:/127.0.0.1:33100 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xea3e4caa, L:/127.0.0.1:33100 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:29 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xea3e4caa, L:/127.0.0.1:33100 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:29 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-06-20 16:54:29 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-06-20 16:54:29 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-06-20 16:54:29 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registering from Nacos Server now...
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registration finished.
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-06-20 16:54:29 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - channel inactive: [id: 0xe986d27f, L:/127.0.0.1:33039 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.NettyClientChannelManager - return to pool, rm channel:[id: 0xe986d27f, L:/127.0.0.1:33039 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - channel valid false,channel:[id: 0xe986d27f, L:/127.0.0.1:33039 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - will destroy channel:[id: 0xe986d27f, L:/127.0.0.1:33039 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xe986d27f, L:/127.0.0.1:33039 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xe986d27f, L:/127.0.0.1:33039 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:30 [Thread-8] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-06-20 16:54:30 [Thread-5] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-06-20 16:54:30 [Thread-5] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-06-20 16:54:30 [Thread-8] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-06-20 16:54:30 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registering from Nacos Server now...
+2025-06-20 16:54:30 [SpringApplicationShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registration finished.
+2025-06-20 16:54:30 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-06-20 16:54:30 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-06-20 16:54:30 [Thread-4] WARN  c.a.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-06-20 16:54:30 [Thread-7] WARN  c.a.n.c.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-06-20 16:54:30 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registering from Nacos Server now...
+2025-06-20 16:54:30 [SpringContextShutdownHook] INFO  c.a.c.n.r.NacosServiceRegistry - De-registration finished.
+2025-06-20 16:54:30 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2025-06-20 16:54:30 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-06-20 16:54:30 [SpringContextShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-06-20 16:54:30 [SpringContextShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - channel inactive: [id: 0xf2e68e2e, L:/127.0.0.1:33081 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.NettyClientChannelManager - return to pool, rm channel:[id: 0xf2e68e2e, L:/127.0.0.1:33081 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - channel valid false,channel:[id: 0xf2e68e2e, L:/127.0.0.1:33081 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.rpc.netty.NettyPoolableFactory - will destroy channel:[id: 0xf2e68e2e, L:/127.0.0.1:33081 ! R:/127.0.0.1:8091]
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xf2e68e2e, L:/127.0.0.1:33081 ! R:/127.0.0.1:8091]) will closed
+2025-06-20 16:54:30 [NettyClientSelector_RMROLE_1_1] INFO  i.s.c.r.n.AbstractNettyRemotingClient - ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xf2e68e2e, L:/127.0.0.1:33081 ! R:/127.0.0.1:8091]) will closed

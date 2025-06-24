@@ -1,7 +1,7 @@
 package com.example.notificationservice.controller;
 
+import com.example.model.Notification.Notifications;
 import com.example.model.common.R;
-import com.example.model.notification.Notification;
 import com.example.notificationservice.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,18 +17,14 @@ public class NotificationController {
         return R.success(notificationService.list());
     }
 
-    @PostMapping("/add")
-    public R add(@RequestBody Notification notification) {
-        return R.success(notificationService.save(notification));
+    @GetMapping("/twoweek")
+    public R twoweek() {
+        return R.success(notificationService.twoweek());
     }
 
-    @PutMapping("/update")
-    public R update(@RequestBody Notification notification) {
-        return R.success(notificationService.updateById(notification));
+    @GetMapping("/weekuse")
+    public R weekUse() {
+        return R.success(notificationService.weekuse());
     }
 
-    @DeleteMapping("/delete/{id}")
-    public R delete(@PathVariable Long id) {
-        return R.success(notificationService.removeById(id));
-    }
 } 

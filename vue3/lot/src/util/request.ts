@@ -6,6 +6,7 @@ import type {
   InternalAxiosRequestConfig,
 } from 'axios'
 import { ElMessage } from 'element-plus'
+import router from '@/router'
 
 // 创建响应数据的接口
 interface ResponseData<T = unknown> {
@@ -58,11 +59,15 @@ class Request {
     // 响应拦截器
     this.instance.interceptors.response.use(
       (response: AxiosResponse<ResponseData>) => {
+        if (response.code === 500) router.push('/login')
         const { code, message } = response.data
-
         // 根据业务状态码处理
         if (code === 200) {
           return response
+        } else if (code === 886) {
+          router.push('/login')
+          localStorage.removeItem('token')
+          return Promise.reject(new Error('登陆异常'))
         } else {
           ElMessage.error(message || '请求失败')
           return Promise.reject(new Error(message || '请求失败'))

@@ -82,6 +82,7 @@ const handleLogin = async () => {
           password: loginForm.password,
         })
         localStorage.setItem('token', res.data.data)
+        console.log(res.data.data)
         ElMessage.success('登录成功')
         router.push('/')
       } catch (error) {

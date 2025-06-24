@@ -17,18 +17,21 @@ public class DeviceController {
         return R.success("获取成功" ,deviceService.list());
     }
 
-    @PostMapping("/add")
-    public R add(@RequestBody Devices device) {
-        return R.success("添加成功",deviceService.save(device));
+    @GetMapping("/twoweek")
+    public R twoweek() {
+        return R.success(deviceService.twoweek());
     }
 
-    @PutMapping("/update")
-    public R update(@RequestBody Devices device) {
-        return R.success("更新成功",deviceService.updateById(device));
+    @GetMapping("/getonline")
+    public R getonline() {return R.success(deviceService.countOnlineDevices());}
+
+    @GetMapping("/getstatus")
+    public R getstatus() {
+        return R.success(deviceService.countStatusDevices());
     }
 
-    @DeleteMapping("/delete/{id}")
-    public R delete(@PathVariable Long id) {
-        return R.success("删除成功",deviceService.removeById(id));
+    @GetMapping("/weekuserate")
+    public R weekuserate() {
+        return R.success(deviceService.weekOnline());
     }
 } 

@@ -23,4 +23,12 @@ spring:
           uri: lb://device-service
           predicates:
             - Path=/device/**
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/notification/**
+        - id: ticket-service
+          uri: lb://ticket-service
+          predicates:
+            - Path=/ticket/**
 

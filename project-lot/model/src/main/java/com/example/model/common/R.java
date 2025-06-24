@@ -26,7 +26,9 @@ public class R<T> {
     public static <T> R<T> success(String message,T data) {
         return new R<>(200, message, data);
     }
-
+    public static <T> R<T> success(T data) {
+        return new R<>(200,null,data);
+    }
     // 成功返回（无数据）
     public static <T> R<T> success() {
         return new R<>(200, "成功", null);

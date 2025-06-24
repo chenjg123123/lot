@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public R<?> handleUnknownException(Exception ex) {
         log.warn("系统未知异常", ex);
-        return R.fail(500, "系统异常：" + ex.getMessage());
+        return R.fail(500, "系统异常");
     }
 
 
