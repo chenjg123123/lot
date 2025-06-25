@@ -20,7 +20,19 @@ spring:
       server-addr: http://localhost:8848
       config:
         server-addr: http://localhost:8848
+  redis:
+    host: localhost
+    port: 6379
 
+  rabbitmq:
+    host: localhost
+    port: 5673
+    username: guest
+    password: guest
+    listener:
+      simple:
+        concurrency: 1
+        prefetch: 1
 nacos:
   discovery:
     auto-registration: true

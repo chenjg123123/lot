@@ -1,5 +1,6 @@
 package com.example.deviceservice.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.deviceservice.mapper.DeviceMapper;
 import com.example.deviceservice.service.DeviceService;
@@ -44,6 +45,14 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Devices> implem
     @Override
     public List<Map<String, Object>> weekOnline() {
        return dateTransUtil.convertDateToWeek(this.baseMapper.countOnlineByDayThisWeek());
+    }
+
+    @Override
+    public List<Devices> listByKey(String name, String status) {
+        QueryWrapper<Devices> devicesQueryWrapper = new QueryWrapper<Devices>();
+        if(name != null) devicesQueryWrapper.like("name", name);
+        if(status != null) devicesQueryWrapper.like("status", status);
+        return this.baseMapper.selectList(devicesQueryWrapper);
     }
 
     /**

@@ -19,6 +19,11 @@ public class auth {
     @Autowired
     private JwtUtil jwtUtil;  // 不需要 new
 
+    /**
+     * 登录
+     * @param request
+     * @return
+     */
     @PostMapping("/login")
     public R auth(@RequestBody LoginRequest request) {
         String encryptedUsername = request.getUsername();

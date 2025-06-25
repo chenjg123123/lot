@@ -13,7 +13,8 @@
         <el-form-item label="设备状态">
           <el-select v-model="searchForm.status"
                      placeholder="请选择状态"
-                     clearable>
+                     clearable
+                     style="width: 180px;">
             <el-option label="在线"
                        value="online" />
             <el-option label="离线"

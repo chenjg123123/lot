@@ -12,4 +12,5 @@ public interface DeviceService extends IService<Devices> {
     Integer countOnlineDevices();
     List<Map<String, Object>> countStatusDevices();
     List<Map<String, Object>> weekOnline();
-} 
+    List<Devices> listByKey(String name, String status);
+}

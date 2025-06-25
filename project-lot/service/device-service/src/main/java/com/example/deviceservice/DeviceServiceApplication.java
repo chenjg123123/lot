@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RestController;
 
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = {"com.example"})
+@SpringBootApplication(scanBasePackages = {"com.example","com.example.service"})
 //@ComponentScan(basePackages = {
 //        "com.example.service"     // ✅ 扫描 common 模块下的 Bean
 //})

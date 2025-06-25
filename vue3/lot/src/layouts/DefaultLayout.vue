@@ -35,12 +35,6 @@
           </el-icon>
           <template #title>告警中心</template>
         </el-menu-item>
-        <el-menu-item index="/dashboard">
-          <el-icon>
-            <DataLine />
-          </el-icon>
-          <template #title>数据大屏</template>
-        </el-menu-item>
       </el-menu>
     </el-aside>
 
@@ -92,7 +86,6 @@ import {
   Monitor,
   Tickets,
   Bell,
-  DataLine,
   Fold,
   Expand,
   ArrowDown,

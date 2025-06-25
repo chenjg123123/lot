@@ -13,7 +13,8 @@
         <el-form-item label="告警级别">
           <el-select v-model="searchForm.level"
                      placeholder="请选择级别"
-                     clearable>
+                     clearable
+                     style="width: 180px;">
             <el-option label="一般"
                        value="normal" />
             <el-option label="重要"
@@ -25,7 +26,8 @@
         <el-form-item label="处理状态">
           <el-select v-model="searchForm.status"
                      placeholder="请选择状态"
-                     clearable>
+                     clearable
+                     style="width: 180px;">
             <el-option label="未处理"
                        value="unhandled" />
             <el-option label="处理中"

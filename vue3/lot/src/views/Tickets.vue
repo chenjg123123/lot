@@ -13,7 +13,8 @@
         <el-form-item label="工单状态">
           <el-select v-model="searchForm.status"
                      placeholder="请选择状态"
-                     clearable>
+                     clearable
+                     style="width: 180px;">
             <el-option label="待处理"
                        value="pending" />
             <el-option label="处理中"
@@ -27,7 +28,8 @@
         <el-form-item label="优先级">
           <el-select v-model="searchForm.priority"
                      placeholder="请选择优先级"
-                     clearable>
+                     clearable
+                     style="width: 180px;">
             <el-option label="低"
                        value="low" />
             <el-option label="中"

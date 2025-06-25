@@ -49,15 +49,12 @@ public class JwtUtil {
             Date expiration = claims.getExpiration();
             if (expiration == null) {
                 // 没有过期时间，视为非法 token 或根据需求判断
-                System.out.println("校验失败1");
                 return false;
             }
             // 判断 token 是否已过期
-            System.out.println("校验失败2");
             return expiration.after(new Date());
         } catch (JwtException | IllegalArgumentException e) {
             log.info("Token 校验失败：{}", e.getMessage());
-            System.out.println("校验失败");
             return false;
         }
     }
