@@ -34,3 +34,5 @@ platforms/
 
 # dotenv 环境变量（如果你用过）
 .env*
+
+.log
