@@ -25,7 +25,7 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary"
-                     @click="handleSearch">
+                     @click="handleSearchPromise">
             <el-icon>
               <Search />
             </el-icon>
@@ -58,6 +58,59 @@
         </el-button>
       </div>
     </div>
+    <!-- 设备详情 -->
+    <el-dialog v-model="detailDialogVisible"
+               title="设备详情"
+               width="500px">
+      <el-form :model="device"
+               label-width="100px"
+               disabled="true">
+        <el-form-item label="设备名称"
+                      prop="name">
+          <el-input v-model="device.name"></el-input>
+        </el-form-item>
+        <el-form-item label="设备编号"
+                      prop="code">
+          <el-input v-model="device.id"></el-input>
+        </el-form-item>
+        <el-form-item label="设备状态"
+                      prop="status">
+          <el-input v-model="device.status"></el-input>
+        </el-form-item>
+        <el-form-item label="设备描述"
+                      prop="description">
+          <el-input v-model="device.description"></el-input>
+        </el-form-item>
+        <el-form-item label="设备位置"
+                      prop="location">
+          <el-input v-model="device.location"></el-input>
+        </el-form-item>
+        <el-form-item label="设备状态"
+                      prop="status">
+          <el-select v-model="device.status">
+            <el-option label="正常"
+                       value="online"></el-option>
+            <el-option label="异常"
+                       value="error"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="设备种类"
+                      prop="description">
+          <el-input v-model="device.type">
+          </el-input>
+        </el-form-item>
+        <el-form-item label="InstallTime"
+                      prop="installationDate">
+          <el-input v-model="parseTimestamp(device.installationDate).fullDate">
+          </el-input>
+        </el-form-item>
+        <el-form-item label="Version"
+                      prop="firmwareVersion">
+          <el-input v-model="device.firmwareVersion">
+          </el-input>
+        </el-form-item>
+      </el-form>
+    </el-dialog>
 
     <!-- 设备列表 -->
     <el-table v-loading="loading"
@@ -80,9 +133,12 @@
           </el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="lastOnlineTime"
-                       label="最后在线时间"
-                       width="180" />
+      <el-table-column label="最后在线时间"
+                       width="180">
+        <template #default="{ row }">
+          {{ parseTimestamp(row.updatedAt).yearMonth }}
+        </template>
+      </el-table-column>
       <el-table-column prop="location"
                        label="位置"
                        min-width="150" />
@@ -149,11 +205,11 @@
           <el-select v-model="deviceForm.type"
                      placeholder="请选择设备类型">
             <el-option label="传感器"
-                       value="sensor" />
+                       value="传感器" />
             <el-option label="控制器"
-                       value="controller" />
+                       value="控制器" />
             <el-option label="网关"
-                       value="gateway" />
+                       value="网关" />
           </el-select>
         </el-form-item>
         <el-form-item label="位置"
@@ -161,13 +217,40 @@
           <el-input v-model="deviceForm.location"
                     placeholder="请输入设备位置" />
         </el-form-item>
-        <el-form-item label="描述"
-                      prop="description">
-          <el-input v-model="deviceForm.description"
-                    type="textarea"
-                    rows="3"
-                    placeholder="请输入设备描述" />
+        <el-form-item label="公司"
+                      prop="companyId">
+          <el-select v-model="deviceForm.companyId"
+                     @change="getCompanies"
+                     placeholder="请选择公司">
+            <el-option v-for="company in companyIDReflect"
+                       :label=company.name
+                       :key="company.id"
+                       :value="company.id" />
+          </el-select>
         </el-form-item>
+        <el-form-item label="版本"
+                      prop="firmwareVersion">
+          <el-input v-model="deviceForm.firmwareVersion"
+                    placeholder="请输入设备版本" />
+        </el-form-item>
+        <el-form-item label="model"
+                      prop="model">
+          <el-input v-model="deviceForm.model"
+                    placeholder="请输入设备model" />
+        </el-form-item>
+        <el-form-item label="保修期"
+                      value="warrantyPeriod">
+          <el-input v-model="deviceForm.warrantyPeriod">
+          </el-input>
+        </el-form-item>
+        <!-- <el-form-item label="
+                     描述"
+                     prop="description">
+            <el-input v-model="deviceForm.description"
+                      type="textarea"
+                      rows="3"
+                      placeholder="请输入设备描述" />
+        </el-form-item> -->
       </el-form>
       <template #footer>
         <span class="dialog-footer">
@@ -181,40 +264,52 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted, onBeforeUnmount } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import type { FormInstance, FormRules } from 'element-plus'
 import { Search, Refresh, Plus, Delete, Edit, View } from '@element-plus/icons-vue'
-
+import { getDeviceList, addDevice } from '@/api/deviceApi'
+import { wsClient } from '@/util/websocket'
+import { parseTimestamp } from '@/util/timeTransform'
+import { number } from 'echarts'
+import { getCompanies } from '@/api/userApi'
 // 搜索表单
 const searchForm = reactive({
   name: '',
   status: '',
 })
-
+const getCompanies = () => {
+  console.log(deviceForm.companyId)
+}
 // 设备列表数据
 const loading = ref(false)
-const deviceList = ref([
-  {
-    id: 1,
-    name: '温度传感器-001',
-    type: 'sensor',
-    status: 'online',
-    lastOnlineTime: '2024-03-15 10:30:00',
-    location: '车间A区-01',
-    description: '用于监测车间温度',
-  },
-  // 更多测试数据...
+const deviceList = ref([])
+const companyIDReflect = reactive([
+  { id: 1, name: '公司1' },
+  { id: 2, name: '公司2' },
 ])
-
+const device = reactive({
+  companyId: 1,
+  createdAt: 1750063954000,
+  firmwareVersion: 'v1.0.0',
+  id: 1,
+  installationDate: 1704038400000,
+  location: '车间A',
+  model: 'T100',
+  name: '温度传感器1',
+  serialNumber: 'SN000001',
+  status: 'online',
+  type: '传感器',
+  updatedAt: 1750293701000,
+  warrantyPeriod: 12,
+})
 // 分页
 const currentPage = ref(1)
 const pageSize = ref(10)
 const total = ref(100)
-
 // 选中的设备
 const selectedDevices = ref([])
-
+const detailDialogVisible = ref(false)
 // 对话框
 const dialogVisible = ref(false)
 const dialogType = ref<'add' | 'edit'>('add')
@@ -223,7 +318,15 @@ const deviceForm = reactive({
   name: '',
   type: '',
   location: '',
-  description: '',
+  companyId: number,
+  createdAt: number,
+  firmwareVersion: '',
+  installationDate: number,
+  model: '',
+  serialNumber: '',
+  status: '',
+  updatedAt: number,
+  warrantyPeriod: 12,
 })
 
 // 表单验证规则
@@ -234,6 +337,10 @@ const deviceRules: FormRules = {
   ],
   type: [{ required: true, message: '请选择设备类型', trigger: 'change' }],
   location: [{ required: true, message: '请输入设备位置', trigger: 'blur' }],
+  compantId: [{ required: true, message: '请选择公司名称', trigger: 'change' }],
+  model: [{ required: true, message: '请输入设备型号', trigger: 'blur' }],
+  firmwareVersion: [{ required: true, message: '请输入设备固件版本', trigger: 'blur' }],
+  warrantyPeriod: [{ required: true, message: '请输入设备保修期限', trigger: 'blur' }],
 }
 
 // 获取状态类型
@@ -255,25 +362,20 @@ const getStatusText = (status: string) => {
   }
   return map[status] || '未知'
 }
-
 // 搜索
-const handleSearch = () => {
-  // TODO: 实现搜索逻辑
-  console.log('搜索条件：', searchForm)
+const handleSearchPromise = async () => {
+  await getDeviceList(currentPage.value, pageSize.value, searchForm.status, searchForm.name)
 }
-
 // 重置搜索
 const resetSearch = () => {
   searchForm.name = ''
   searchForm.status = ''
-  handleSearch()
+  handleSearchPromise()
 }
-
 // 选择变化
 const handleSelectionChange = (selection: any[]) => {
   selectedDevices.value = selection
 }
-
 // 添加设备
 const handleAdd = () => {
   dialogType.value = 'add'
@@ -281,22 +383,18 @@ const handleAdd = () => {
   deviceForm.name = ''
   deviceForm.type = ''
   deviceForm.location = ''
-  deviceForm.description = ''
 }
-
 // 编辑设备
 const handleEdit = (row: any) => {
   dialogType.value = 'edit'
   dialogVisible.value = true
   Object.assign(deviceForm, row)
 }
-
 // 查看设备
 const handleView = (row: any) => {
-  // TODO: 实现查看详情逻辑
-  console.log('查看设备：', row)
+  detailDialogVisible.value = true
+  device.value = row
 }
-
 // 删除设备
 const handleDelete = (row: any) => {
   ElMessageBox.confirm('确认删除该设备吗？', '提示', {
@@ -306,7 +404,6 @@ const handleDelete = (row: any) => {
     ElMessage.success('删除成功')
   })
 }
-
 // 批量删除
 const handleBatchDelete = () => {
   if (selectedDevices.value.length === 0) {
@@ -321,31 +418,45 @@ const handleBatchDelete = () => {
     ElMessage.success('删除成功')
   })
 }
-
 // 提交表单
 const handleSubmit = async () => {
   if (!deviceFormRef.value) return
-
   await deviceFormRef.value.validate((valid) => {
     if (valid) {
-      // TODO: 实现提交逻辑
-      ElMessage.success(dialogType.value === 'add' ? '添加成功' : '更新成功')
+      //提交逻辑
+      addDevice(deviceForm)
       dialogVisible.value = false
     }
   })
 }
-
 // 分页大小变化
 const handleSizeChange = (val: number) => {
   pageSize.value = val
-  // TODO: 重新加载数据
+  handleSearchPromise()
 }
-
 // 页码变化
 const handleCurrentChange = (val: number) => {
   currentPage.value = val
-  // TODO: 重新加载数据
+  handleSearchPromise()
 }
+onMounted(async () => {
+  wsClient.connect()
+
+  await wsClient.waitUntilConnected() // ✅ 等待 requestId 绑定完成
+  companyIDReflect.value = await getCompanies()
+  wsClient.on('select:device:getlist', (msg) => {
+    console.log('select:device:getlist', msg.payload.pageInfo)
+    total.value = msg.payload.pageInfo.total
+    deviceList.value = msg.payload.pageInfo.list
+  })
+
+  handleSearchPromise() // ✅ 确保是在绑定成功后执行
+})
+
+onBeforeUnmount(() => {
+  localStorage.removeItem('requestId')
+  wsClient.close()
+})
 </script>
 
 <style scoped lang="scss">

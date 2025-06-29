@@ -1,8 +1,10 @@
 package com.example.deviceservice.controller;
 
+
+import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.deviceservice.config.DeviceRabbitMQConfig;
+import com.example.model.common.AsyncMessage;
 import com.example.model.common.R;
 import com.example.model.devices.Devices;
 import com.example.deviceservice.service.DeviceService;
@@ -109,10 +111,15 @@ public class DeviceController {
      * 查询设备
      * @return
      */
-    @GetMapping("/getlist")
-    public R getlist(@RequestParam(required = false) String name, @RequestParam(required = false) String status) {
-        String key = "hot:device:getlist";
-        rabbitMQUtils.sendObject(deviceRabbitMQConfig.EXCHANGE_NAME, DeviceRabbitMQConfig.ROUTING_KEY, key);
+    @PostMapping("/getlist")
+    public R getlist(@RequestBody AsyncMessage<Map<String, Object>> message) {
+        String key = "select:device:getlist";
+        message.setType(key);
+        rabbitMQUtils.sendObject(deviceRabbitMQConfig.EXCHANGE_NAME,
+                deviceRabbitMQConfig.ROUTING_KEY_SELECT,
+                message);
         return R.success();
     }
+
+
 } 

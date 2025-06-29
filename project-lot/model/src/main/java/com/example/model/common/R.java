@@ -26,6 +26,7 @@ public class R<T> {
     public static <T> R<T> success(String message,T data) {
         return new R<>(200, message, data);
     }
+
     public static <T> R<T> success(T data) {
         return new R<>(200,null,data);
     }

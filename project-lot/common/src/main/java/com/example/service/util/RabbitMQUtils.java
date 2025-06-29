@@ -32,8 +32,7 @@ public class RabbitMQUtils {
      * @param object 任意对象
      */
     public void sendObject(String exchange, String routingKey, Object object) {
-        String json = JSON.toJSONString(object);
-        rabbitTemplate.convertAndSend(exchange, routingKey, json);
+        rabbitTemplate.convertAndSend(exchange, routingKey, object);
     }
 
     /**

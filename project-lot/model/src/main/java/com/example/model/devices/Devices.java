@@ -2,6 +2,7 @@ package com.example.model.devices;
 
 import lombok.Data;
 import java.sql.Timestamp;
+import java.util.Map;
 
 @Data
 public class Devices {
@@ -19,4 +20,16 @@ public class Devices {
     private String firmwareVersion;
     private Timestamp createdAt;
     private Timestamp updatedAt;
+
+    public static Devices fromMap(Map<String, Object> payload) {
+        Devices devices = new Devices();
+        devices.name = (String) payload.get("name");
+        devices.type = (String) payload.get("type");
+        devices.model = (String) payload.get("model");
+        devices.companyId = ((Number) payload.get("companyId")).longValue();
+        devices.location = (String) payload.get("location");
+        devices.warrantyPeriod = (Integer) payload.get("warrantyPeriod");
+        devices.firmwareVersion = (String) payload.get("firmwareVersion");
+        return  devices;
+    }
 }

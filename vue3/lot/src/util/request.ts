@@ -23,7 +23,7 @@ interface RequestConfig extends AxiosRequestConfig {
 
 class Request {
   private instance: AxiosInstance
-  private retryCount: number = 3
+  private retryCount: number = 1
   private retryDelay: number = 1000
 
   constructor(config: RequestConfig) {

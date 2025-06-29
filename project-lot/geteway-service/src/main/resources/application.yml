@@ -9,12 +9,26 @@ spring:
       discovery:
         ip: 127.0.0.1  # 手动指定注册 IP
         server-addr: localhost:8848
+        username: nacos
+        password: nacos
+      config:
+        server-addr: http://localhost:8848
+        username: nacos
+        password: nacos
     gateway:
       discovery:
         locator:
           enabled: true   # 启用通过服务名转发（如 lb://user-service）
           lower-case-service-id: true
       routes:
+        #admin
+        - id: admin-device-service
+          uri: lb://device-service
+          predicates:
+            - Path=/device/operation/**
+          filters:
+            - RewritePath=/device/operation/(?<segment>.+), /device/admin/${segment}
+        #normal
         - id: user-service
           uri: lb://user-service
           predicates:
@@ -32,3 +46,19 @@ spring:
           predicates:
             - Path=/ticket/**
 
+
+  rabbitmq:
+    host: localhost
+    port: 5673
+    username: guest
+    password: guest
+    listener:
+      simple:
+        concurrency: 1
+        prefetch: 1
+netty:
+  enabled: true
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.gateway.filter.factory.RewritePathGatewayFilterFactory: DEBUG

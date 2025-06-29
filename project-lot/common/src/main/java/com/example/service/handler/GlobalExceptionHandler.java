@@ -4,6 +4,7 @@ package com.example.service.handler;
 import com.example.model.common.R;
 
 
+import com.example.service.exception.JsonAnalyseException;
 import com.example.service.exception.RSABusinessException;
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,6 +27,10 @@ public class GlobalExceptionHandler {
         return R.fail(500, "系统异常");
     }
 
-
+    @ExceptionHandler(JsonAnalyseException.class)
+    public R<?> handleJsonAnalyseException(JsonAnalyseException ex) {
+        log.warn("数据异常", ex);
+        return R.fail(500, "数据异常");
+    }
 }
 

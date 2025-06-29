@@ -40,4 +40,6 @@ public abstract class BaseRabbitMQConfig {
     public Binding binding() {
         return BindingBuilder.bind(queue()).to(exchange()).with(routingKey());
     }
+
+
 }

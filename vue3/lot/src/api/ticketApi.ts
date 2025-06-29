@@ -13,3 +13,11 @@ export const getWeekStatus = () => {
 export const getWeekeffient = () => {
   return request.get('/ticket/weekticketeffiency')
 }
+export const getDeviceList = (name: string, status: string) => {
+  return request.get('/ticket/getlist', {
+    params: {
+      name: name,
+      status: status,
+    },
+  })
+}
