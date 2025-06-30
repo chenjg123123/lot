@@ -37,5 +37,13 @@ public class DeviceAdminController {
                 message);
         return R.success();
     }
-
+    @PostMapping("/delete")
+    public R delete(@RequestBody AsyncMessage<Map<String, Object>> message) {
+        String key = "operation:device:delete";
+        message.setType(key);
+        rabbitMQUtils.sendObject(deviceRabbitMQConfig.EXCHANGE_NAME,
+                deviceRabbitMQConfig.ROUTING_KEY_SELECT,
+                message);
+        return R.success();
+    }
 }

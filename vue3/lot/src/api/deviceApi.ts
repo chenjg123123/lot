@@ -34,4 +34,11 @@ export const addDevice = (deviceForm: any) => {
     payload: { name, type, location, companyId, firmwareVersion, model, warrantyPeriod }
   });
 };
-
+//删除设备
+export const deleteDevice = (deviceId: [{ id: string, name: string }]) => {
+  const requestId = localStorage.getItem("requestId");
+  return request.post('/device/operation/delete', {
+    requestId: requestId,
+    payload: { deviceId: deviceId }
+  });
+};

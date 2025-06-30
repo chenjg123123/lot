@@ -1,8 +1,10 @@
 package com.example.deviceservice.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.deviceservice.DTO.delectDeviceDTO;
 import com.example.model.devices.Devices;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -47,5 +49,7 @@ public interface DeviceMapper extends BaseMapper<Devices> {
             "ORDER BY d.date"
     })
     List<Map<String, Object>> countOnlineByDayThisWeek();
+
+    int deleteByIdAndNameList(@Param("list") List<delectDeviceDTO> list);
 
 } 

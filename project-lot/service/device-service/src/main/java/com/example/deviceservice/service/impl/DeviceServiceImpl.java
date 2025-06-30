@@ -2,6 +2,7 @@ package com.example.deviceservice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.deviceservice.DTO.delectDeviceDTO;
 import com.example.deviceservice.mapper.DeviceMapper;
 import com.example.deviceservice.service.DeviceService;
 import com.example.model.devices.Devices;
@@ -53,6 +54,20 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceMapper, Devices> implem
         if(name != null) devicesQueryWrapper.like("name", name);
         if(status != null) devicesQueryWrapper.like("status", status);
         return this.baseMapper.selectList(devicesQueryWrapper);
+    }
+
+    /**
+     * id name 批量删除
+     * @return
+     */
+    @Override
+    public boolean delectList(List<delectDeviceDTO>  list) {
+        System.out.println("删除执行");
+        System.out.println(list);
+        int num = this.baseMapper.deleteByIdAndNameList(list);
+        if(list.size() == num)
+        return true;
+        return false;
     }
 
     /**

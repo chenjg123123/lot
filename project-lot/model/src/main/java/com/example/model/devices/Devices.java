@@ -6,7 +6,7 @@ import java.util.Map;
 
 @Data
 public class Devices {
-    private Long id;
+    private String id;
     private String name;
     private String type;
     private String model;
@@ -30,6 +30,9 @@ public class Devices {
         devices.location = (String) payload.get("location");
         devices.warrantyPeriod = (Integer) payload.get("warrantyPeriod");
         devices.firmwareVersion = (String) payload.get("firmwareVersion");
+        devices.installationDate = (java.sql.Date) payload.get("installationDate");
+        devices.serialNumber = (String) payload.get("serialNumber");
+
         return  devices;
     }
 }

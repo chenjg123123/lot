@@ -77,10 +77,6 @@
                       prop="status">
           <el-input v-model="device.status"></el-input>
         </el-form-item>
-        <el-form-item label="设备描述"
-                      prop="description">
-          <el-input v-model="device.description"></el-input>
-        </el-form-item>
         <el-form-item label="设备位置"
                       prop="location">
           <el-input v-model="device.location"></el-input>
@@ -95,7 +91,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="设备种类"
-                      prop="description">
+                      prop="type">
           <el-input v-model="device.type">
           </el-input>
         </el-form-item>
@@ -233,14 +229,28 @@
           <el-input v-model="deviceForm.firmwareVersion"
                     placeholder="请输入设备版本" />
         </el-form-item>
-        <el-form-item label="model"
+        <el-form-item label="型号"
                       prop="model">
           <el-input v-model="deviceForm.model"
                     placeholder="请输入设备model" />
         </el-form-item>
+        <el-form-item label="安装时间">
+          <el-date-picker v-model="deviceForm.installationDate"
+                          type="datetime"
+                          placeholder="选择安装时间"
+                          format="YYYY-MM-DD HH:mm:ss"
+                          value-format="x"
+                          style="width: 100%;">
+          </el-date-picker>
+        </el-form-item>
         <el-form-item label="保修期"
                       value="warrantyPeriod">
           <el-input v-model="deviceForm.warrantyPeriod">
+          </el-input>
+        </el-form-item>
+        <el-form-item label="序列号"
+                      value="serialNumber">
+          <el-input v-model="deviceForm.serialNumber">
           </el-input>
         </el-form-item>
         <!-- <el-form-item label="
@@ -268,7 +278,7 @@ import { ref, reactive, onMounted, onBeforeUnmount } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import type { FormInstance, FormRules } from 'element-plus'
 import { Search, Refresh, Plus, Delete, Edit, View } from '@element-plus/icons-vue'
-import { getDeviceList, addDevice } from '@/api/deviceApi'
+import { getDeviceList, addDevice, deleteDevice } from '@/api/deviceApi'
 import { wsClient } from '@/util/websocket'
 import { parseTimestamp } from '@/util/timeTransform'
 import { number } from 'echarts'
@@ -399,22 +409,26 @@ const handleView = (row: any) => {
 const handleDelete = (row: any) => {
   ElMessageBox.confirm('确认删除该设备吗？', '提示', {
     type: 'warning',
-  }).then(() => {
-    // TODO: 实现删除逻辑
+  }).then(async () => {
+    await deleteDevice([{ id: row.id, name: row.name }])
+    selectedDevices.value = []
     ElMessage.success('删除成功')
   })
 }
 // 批量删除
 const handleBatchDelete = () => {
   if (selectedDevices.value.length === 0) {
-    ElMessage.warning('请选择要删除的设备')
     return
   }
-
   ElMessageBox.confirm(`确认删除选中的 ${selectedDevices.value.length} 个设备吗？`, '提示', {
     type: 'warning',
-  }).then(() => {
-    // TODO: 实现批量删除逻辑
+  }).then(async () => {
+    await deleteDevice(
+      selectedDevices.value.map((res) => {
+        return { id: res.id, name: res.name }
+      })
+    )
+    selectedDevices.value = null
     ElMessage.success('删除成功')
   })
 }

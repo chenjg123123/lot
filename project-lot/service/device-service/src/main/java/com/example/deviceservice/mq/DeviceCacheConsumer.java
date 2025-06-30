@@ -1,5 +1,6 @@
 package com.example.deviceservice.mq;
 
+import com.example.deviceservice.DTO.delectDeviceDTO;
 import com.example.deviceservice.service.DeviceService;
 import com.example.model.common.AsyncMessage;
 import com.example.model.devices.Devices;
@@ -85,7 +86,6 @@ public class DeviceCacheConsumer {
     public void handleSelectMessage(AsyncMessage<Map<String, Object>> msg) {
         String Flag = msg.getType();
         String requestId = msg.getRequestId();
-        System.out.println("现在的接口:"+Flag);
         if(requestId==null)return;
         Map<String, Object> payload = msg.getPayload();
         switch (Flag) {
@@ -113,7 +113,11 @@ public class DeviceCacheConsumer {
                 deviceService.save(device);
                 break;
             }
-
+            case "operation:device:delete": {
+                List<delectDeviceDTO> lists = (List<delectDeviceDTO>) payload.get("deviceId");
+                deviceService.delectList(lists);
+                break;
+            }
             default:
                 log.warn("Device 处理异常"+Flag);
         }

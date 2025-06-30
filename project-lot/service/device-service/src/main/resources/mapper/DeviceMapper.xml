@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.deviceservice.mapper.DeviceMapper">
+
+    <delete id="deleteByIdAndNameList">
+        DELETE FROM devices
+        WHERE (id, name) IN
+        <foreach collection="list" item="item" separator="," open="(" close=")">
+            (#{item.id}, #{item.name})
+        </foreach>
+    </delete>
+
+</mapper>

@@ -52,3 +52,9 @@ pagehelper:
   support-methods-arguments: true
   params: count=countSql
 
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.model  # DeviceDTO 所在包
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
